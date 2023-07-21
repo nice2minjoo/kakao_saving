@@ -85,7 +85,7 @@ with tab2:
     st.markdown('- :red[시간]과 :red[끈기]가 필요하다.')
     st.markdown('- 매주 챙겨야 하는 :red[번거로움]이 있다. (납입 실패 시 :red[우대금리 X])')
     st.markdown('- 한 번이라도 :red[자동이체 실패]하면, 통장 이율이 :red[3.5%]가 된다.')
-    st.markdown('- 생각보다 :red[부담]된다. 뒤로 갈수록 :red[매주 큰 돈]이 빠져 나간다')
+    st.markdown('- 생각보다 :red[부담]된다. 뒤로 갈수록 :red[매주 큰 돈]이 빠져 나간다.')
     
     st.divider()
     image = Image.open("kakao_saving.jpg")
