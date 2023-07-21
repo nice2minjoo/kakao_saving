@@ -55,6 +55,7 @@ with tab1:
                 # data_df = df.style.hide(axis=0)
                 # st.write(data_df.to_html(), unsafe_allow_html=True)
 
+                st.divider()
                 st.subheader("주차 별 납입 금액")
                 col1, col2 = st.columns([5, 2])
                 df_data = pd.DataFrame(
