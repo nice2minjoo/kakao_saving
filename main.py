@@ -11,7 +11,7 @@ st.set_page_config(page_title = "kakao saving")
 st.title('카카오 26주 풍차돌리기')
 st.write('이 앱은 카카오 26주 적금 풍차돌리기에 필요한 금액과 이자를 계산하기 위해 제작되었습니다.')
 
-tab1, tab2 = st.tabs(["계산기","풍차돌리기란?"])
+tab1, tab2, tab3 = st.tabs(["계산기","풍차돌리기란?","만들기"])
 
 with tab1:
     with st.spinner("calculating..."):
@@ -69,7 +69,7 @@ with tab1:
 
 with tab2:
     st.markdown('#### 풍차돌리기란?')
-    st.markdown('카카오 26주 적금을 총 **26개**를 운용하는 것. 매주 같은 요일에 1개씩 개설 !!')
+    st.markdown('카카오 26주 적금을 총 :orange[**26개**]를 운용하는 것. 매주 같은 요일에 1개씩 개설 !!')
     st.markdown('27주차 이후부터 효과를 본다.')
     st.divider()
     st.markdown('##### 장점')
@@ -85,5 +85,31 @@ with tab2:
     st.markdown('- 생각보다 :red[부담]된다. 뒤로 갈수록 :red[매주 큰 돈]이 빠져 나간다.')
     
     st.divider()
-    image = Image.open("kakao_saving.jpg")
+    image = Image.open("./assets/kakao_saving.jpg")
     st.image(image, caption='kakao saving')
+
+with tab3:
+    st.markdown('1. :orange[카카오뱅크] 어플 실행 → 로그인 (카카오뱅크 계좌 필요)')
+    image = Image.open("./assets/step1.jpg")
+    st.image(image)
+    st.divider()
+    st.markdown('2. 계좌 목록 하단에 있는 :orange[+] 버튼 클릭')
+    image = Image.open("./assets/step2.png")
+    st.image(image)
+    st.divider()
+    st.markdown('3. :orange[26주 적금] 선택 → 26주 적금 신청하기')
+    image = Image.open("./assets/step3.png")
+    st.image(image)
+    st.divider()
+    st.markdown('4. 계좌 개설 약관 동의')
+    st.divider()
+    st.markdown('5. :orange[증액 금액] 선택 (계산기로 먼저 :orange[총 필요 금액] 확인 후 선택) ')
+    image = Image.open("./assets/step5.png")
+    st.image(image)
+    st.divider()
+    st.markdown('6. 만기설정 → 만기 시 :orange[자동해지]')
+    image = Image.open("./assets/step6.png")
+    st.image(image)
+    st.divider()
+    st.markdown('7. :orange[매주 같은 요일]에 동일한 방법으로 반복')
+    st.markdown('*7월 21일 금요일 1호 개설  → 7월 28일 금요일 2호 개설 → 8월 4일 금요일 3호 개설 → ...*')
