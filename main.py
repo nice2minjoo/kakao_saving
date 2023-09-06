@@ -38,12 +38,22 @@ with tab1:
         beforeTax = int(total * 0.138363 / 100)
         afterTax = int(beforeTax * 0.846) # tax 15.4%
         
-        df = pd.DataFrame(
-            {
-                "content" : ["총 필요 금액", "26주 후 매주 출금 금액", "매주 받는 이자 (세전)", "매주 받는 이자 (세후)", "1년 동안 받는 이자 (세전)", "1년 동안 받는 이자 (세후)"],
-                "result": [format(total,',d')+"원", format(member[len(member)-1], ',d')+"원", format(beforeTax, ',d')+"원", format(afterTax, ',d')+"원", format(beforeTax*52, ',d')+"원", format(afterTax*52, ',d')+"원"]
-            }
-        )
+        detail = st.checkbox("자세히")
+        
+        if detail:
+            df = pd.DataFrame(
+                {
+                    "content" : ["총 필요 금액", "26주 후 매주 출금 금액", "매주 받는 이자 (세전)", "매주 받는 이자 (세후)", "1년 동안 받는 이자 (세전)", "1년 동안 받는 이자 (세후)"],
+                    "result": [format(total,',d')+"원", format(member[len(member)-1], ',d')+"원", format(beforeTax, ',d')+"원", format(afterTax, ',d')+"원", format(beforeTax*52, ',d')+"원", format(afterTax*52, ',d')+"원"]
+                }
+            )
+        else:
+            df = pd.DataFrame(
+                {
+                    "content" : ["총 필요 금액", "매주 받는 이자 (세전)", "매주 받는 이자 (세후)"],
+                    "result": [format(total,',d')+"원", format(beforeTax, ',d')+"원", format(afterTax, ',d')+"원"]
+                }
+            )
         st.dataframe(
             df,
             use_container_width = True,
